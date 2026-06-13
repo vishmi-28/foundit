@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Browse Items - FoundIt</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo-area">
+        <img src="images/logo.png" class="logo-img" alt="FoundIt Logo">
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="./index.html">Home</a></li>
+
+        <li><a href="./browse.html">Browse</a></li>
+
+        <li><a href="./howitworks.html">How it Works</a></li>
+
+        <li><a href="./report.html">Report Item</a></li>
+
+        <li><a href="./dashboard.html">Dashboard</a></li>
+
+        <li><a href="./login.html" class="login-btn">Login</a></li>
+
+    </ul>
+
+</nav>
+<!-- HERO SECTION -->
+<section class="browse-hero">
+
+    <h1>Browse Lost & Found Items</h1>
+
+    <p>
+        Search items reported by our community
+    </p>
+
+</section>
+
+<!-- SEARCH & FILTER -->
+<section class="search-filter-section">
+
+    <div class="search-filter-container">
+
+        <!-- SEARCH -->
+        <div class="search-box-wrapper">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search items..."
+                class="search-box"
+            >
+
+        </div>
+
+        <!-- CATEGORY -->
+        <select class="filter" id="categoryFilter">
+
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="wallets">Wallets</option>
+            <option value="keys">Keys</option>
+            <option value="idcards">ID Cards</option>
+            <option value="bags">Bags</option>
+
+        </select>
+
+        <!-- LOCATION -->
+        <select class="filter" id="locationFilter">
+
+            <option value="all">All Locations</option>
+            <option value="library">Library</option>
+            <option value="cafeteria">Cafeteria</option>
+            <option value="parking">Parking Area</option>
+            <option value="auditorium">Auditorium</option>
+
+        </select>
+
+        <!-- STATUS -->
+        <select class="filter" id="statusFilter">
+
+            <option value="all">All Status</option>
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+
+        </select>
+
+    </div>
+
+</section>
+
+<!-- ITEMS SECTION -->
+<section class="browse-items-section">
+
+    <!-- THIS GRID WILL BE FILLED FROM DATABASE -->
+    <div class="items-grid" id="itemsGrid">
+
+    </div>
+
+</section>
+
+<!-- ITEM DETAILS MODAL -->
+<div class="modal" id="itemModal">
+
+    <div class="modal-content">
+
+        <span
+            class="close-btn"
+            onclick="closeModal()"
+        >
+            &times;
+        </span>
+
+        <img
+            id="modalImage"
+            class="modal-image"
+            src=""
+            alt="Item Image"
+        >
+
+        <div class="modal-body">
+
+            <h2 id="modalTitle">
+                Item Name
+            </h2>
+
+            <div id="modalStatus"></div>
+
+            <p id="modalCategory"></p>
+
+            <p id="modalLocation"></p>
+
+            <p id="modalDescription"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- ABOUT -->
+        <div class="footer-about">
+
+            <img
+                src="images/logo.png"
+                alt="FoundIt Logo"
+                class="footer-logo"
+            >
+
+            <p>
+                FoundIt helps people reconnect with their lost belongings
+                through a smart, secure, and community-powered platform.
+            </p>
+
+        </div>
+
+        <!-- LINKS -->
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse Items</a>
+            <a href="howitworks.html">How It Works</a>
+            <a href="report.html">Report Item</a>
+
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="footer-links">
+
+            <h3>Support</h3>
+
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-contact">
+
+            <h3>Get in Touch</h3>
+
+            <p>Email: support@foundit.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: Chennai, India</p>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 FoundIt. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/browse.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

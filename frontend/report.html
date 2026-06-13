@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Report Item - FoundIt</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo-area">
+
+        <img src="images/logo.png" class="logo-img">
+
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+
+        ☰
+
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="browse.html">Browse</a></li>
+
+        <li><a href="howitworks.html">How it Works</a></li>
+
+        <li><a href="report.html">Report Item</a></li>
+
+        <li><a href="dashboard.html">Dashboard</a></li>
+
+        <li><a href="login.html" class="login-btn">Login</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- REPORT SECTION -->
+
+<section class="report-section">
+
+    <h1>Report Lost / Found Item</h1>
+
+    <p>
+        Submit details about your lost or found item securely.
+    </p>
+
+    <!-- FORM -->
+
+    <form class="report-form" id="reportForm">
+
+        <!-- TITLE -->
+
+        <input 
+            type="text" 
+            id="title" 
+            placeholder="Item Name"
+            required
+        >
+
+        <!-- LOCATION -->
+
+        <input 
+            type="text" 
+            id="location" 
+            placeholder="Location"
+            required
+        >
+
+        <!-- CATEGORY -->
+
+        <select id="category" required>
+
+            <option value="">
+                Select Category
+            </option>
+
+            <option value="Electronics">
+                Electronics
+            </option>
+
+            <option value="Wallet">
+                Wallet
+            </option>
+
+            <option value="Keys">
+                Keys
+            </option>
+
+            <option value="ID Card">
+                ID Card
+            </option>
+
+            <option value="Bag">
+                Bag
+            </option>
+
+        </select>
+
+        <!-- TYPE -->
+
+        <select id="type" required>
+
+            <option value="">
+                Select Type
+            </option>
+
+            <option value="lost">
+                Lost
+            </option>
+
+            <option value="found">
+                Found
+            </option>
+
+        </select>
+
+        <!-- DESCRIPTION -->
+
+        <textarea
+            id="description"
+            placeholder="Describe the item..."
+        ></textarea>
+
+        <!-- IMAGE -->
+
+        <input type="file" id="image">
+
+        <!-- BUTTON -->
+
+        <button type="submit">
+
+            Submit Report
+
+        </button>
+
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- ABOUT -->
+
+        <div class="footer-about">
+
+            <img 
+                src="images/logo.png"
+                alt="FoundIt Logo"
+                class="footer-logo"
+            >
+
+            <p>
+                FoundIt helps people reconnect with their lost belongings
+                through a smart, secure, and community-powered platform.
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="browse.html">Browse Items</a>
+
+            <a href="howitworks.html">How It Works</a>
+
+            <a href="report.html">Report Item</a>
+
+        </div>
+
+        <!-- SUPPORT -->
+
+        <div class="footer-links">
+
+            <h3>Support</h3>
+
+            <a href="#">Help Center</a>
+
+            <a href="#">Privacy Policy</a>
+
+            <a href="#">Terms & Conditions</a>
+
+            <a href="#">Contact Us</a>
+
+        </div>
+
+        <!-- CONTACT -->
+
+        <div class="footer-contact">
+
+            <h3>Get in Touch</h3>
+
+            <p>Email: support@foundit.com</p>
+
+            <p>Phone: +91 98765 43210</p>
+
+            <p>Location: Chennai, India</p>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>© 2026 FoundIt. All Rights Reserved.</p>
+
+    </div>
+
+</footer>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/browse.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="images/logo.png">
+
+<title>FoundIt - Dashboard</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body class="dashboard-body">
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo-area">
+
+        <img src="images/logo.png"
+        class="logo">
+
+    </div>
+
+    <div class="menu-toggle"
+    id="menuToggle">
+
+        ☰
+
+    </div>
+
+    <ul class="nav-links">
+
+    <li><a href="/index.html">Home</a></li>
+
+    <li><a href="/browse.html">Browse</a></li>
+
+    <li><a href="howitworks.html">How it Works</a></li>
+    <li><a href="report.html">Report Item</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="login.html" class="login-btn">Login</a></li>
+
+</ul>
+
+</nav>
+
+<!-- =========================
+     DASHBOARD SECTION
+========================= -->
+
+<section class="dashboard-section">
+
+    <!-- HEADER -->
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <h1>
+                Welcome Back 👋
+            </h1>
+
+            <p>
+                Manage your lost and found activities.
+            </p>
+
+        </div>
+
+        <div class="dashboard-user">
+
+            <img src="https://i.pravatar.cc/100"
+            alt="User">
+
+            <div>
+
+                <!-- FIX: dynamic username -->
+                <h3 id="username">User</h3>
+
+                <span>Student User</span>
+
+                <!-- LOGOUT BUTTON -->
+                <button id="logoutBtn" class="login-btn" style="margin-top:10px;">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- TABS NAVIGATION -->
+    <div class="dashboard-tabs">
+        <button class="tab-btn active" data-tab="overview"><i class="fa-solid fa-chart-simple"></i> Overview</button>
+        <button class="tab-btn" data-tab="reports"><i class="fa-solid fa-clipboard-list"></i> Reports</button>
+        <button class="tab-btn" data-tab="chats"><i class="fa-solid fa-comments"></i> Chats <span id="chatBadge" class="tab-badge" style="display:none;">0</span></button>
+        <button class="tab-btn" id="usersTabBtn" data-tab="users" style="display:none;"><i class="fa-solid fa-users"></i> Users</button>
+        <button class="tab-btn" data-tab="notifications"><i class="fa-solid fa-bell"></i> Notifications</button>
+    </div>
+
+    <!-- OVERVIEW TAB -->
+    <div id="overviewTab" class="tab-content">
+
+    <!-- =========================
+         STATS
+    ========================= -->
+
+    <div class="dashboard-stats">
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-icon">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+            </div>
+
+            <div>
+
+                <h2>120</h2>
+
+                <p>Lost Items</p>
+
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div>
+
+                <h2>95</h2>
+
+                <p>Found Items</p>
+
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-icon">
+
+                <i class="fa-solid fa-handshake"></i>
+
+            </div>
+
+            <div>
+
+                <h2>42</h2>
+
+                <p>Claimed</p>
+
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <div class="dashboard-card-icon">
+
+                <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+            <div>
+
+                <h2>18</h2>
+
+                <p>Pending</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         CHARTS SECTION
+    ========================= -->
+
+    <div class="charts-grid">
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <h2>
+                    Lost vs Found
+                </h2>
+
+            </div>
+
+            <canvas id="itemsChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+
+                <h2>
+                    Recent Activity
+                </h2>
+
+            </div>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+                    <div class="activity-dot"></div>
+                    <p>Wallet reported lost near Library</p>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-dot"></div>
+                    <p>Phone claim request approved</p>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-dot"></div>
+                    <p>New ID Card found in Cafeteria</p>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-dot"></div>
+                    <p>Headphones marked as returned</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         RECENT REPORTS
+    ========================= -->
+
+    <div class="dashboard-table-wrapper">
+
+        <div class="dashboard-table-top">
+
+            <h2>Recent Reports</h2>
+
+            <input type="text"
+            placeholder="Search items..."
+            class="dashboard-search">
+
+        </div>
+
+        <div class="dashboard-table">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Wallet</td>
+                        <td>Accessories</td>
+                        <td><span class="dashboard-badge badge-lost">Lost</span></td>
+                        <td>26 May 2026</td>
+                        <td><button class="details-btn">View</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone</td>
+                        <td>Electronics</td>
+                        <td><span class="dashboard-badge badge-found">Found</span></td>
+                        <td>24 May 2026</td>
+                        <td><button class="details-btn">View</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>ID Card</td>
+                        <td>Documents</td>
+                        <td><span class="dashboard-badge badge-pending">Pending</span></td>
+                        <td>22 May 2026</td>
+                        <td><button class="details-btn">View</button></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    </div> <!-- Overview Tab End -->
+
+    <!-- REPORTS TAB -->
+    <div id="reportsTab" class="tab-content" style="display:none;">
+        <div id="reportsTableContainer"></div>
+        <div id="linkReportsContainer"></div>
+    </div>
+
+    <!-- CHATS TAB -->
+    <div id="chatsTab" class="tab-content" style="display:none;">
+        <div id="chatDashboardContainer"></div>
+    </div>
+
+    <!-- USERS TAB -->
+    <div id="usersTab" class="tab-content" style="display:none;">
+        <div id="usersTableContainer"></div>
+    </div>
+
+    <!-- NOTIFICATIONS TAB -->
+    <div id="notificationsTab" class="tab-content" style="display:none;">
+        <div id="notificationsTableContainer"></div>
+    </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+
+            <img src="images/logo.png"
+            class="footer-logo">
+
+            <p>
+                FoundIt helps people reconnect with their lost belongings.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse Items</a>
+            <a href="howitworks.html">How It Works</a>
+            <a href="login.html">Login</a>
+
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Support</h3>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h3>Get in Touch</h3>
+            <p>Email: support@foundit.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: Chennai, India</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 FoundIt. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/browse.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
